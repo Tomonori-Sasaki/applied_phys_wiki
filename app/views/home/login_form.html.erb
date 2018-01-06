@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="user-form-box">
+    <h2>Log In</h2>
+    <%= form_for :user, :url => {:action => 'login'} do |f| %>
+
+      <% if @error_message %>
+        <div id="error_explanation" class="alert alert-danger">
+          <p><%= @error_message %></p>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+          <label>ユーザー名</label>
+          <%= f.email_field :name, class: "form-control", value: @name %>
+      </div>
+      <div class="form-group">
+          <label>パスワード</label>
+          <%= f.password_field :password, class: "form-control", value: @password %>
+      </div>
+      <%= f.submit "Log In", class: "btn btn-default btn-block", style: "width: 160px; margin-bottom: 30px;" %>
+    <% end %>
+  </div>
+</div>

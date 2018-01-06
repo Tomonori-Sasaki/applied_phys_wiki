@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <br><br>
+    <div class="panel panel-primary" style="width: 600px; margin: auto;">
+      <div class="panel-heading" style="text-align: center;"><%= @history.word %></div>
+      <!-- Table -->
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <tbody>
+            <tr>
+              <th style="width: 80px;">元ネタ</th><td><%= @history.name %></td>
+            </tr>
+            <tr>
+              <th>説明</th><td><%= @history.examination %></td>
+            </tr>
+            <tr>
+              <th>日付</th><td><%= @history.date %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!--/table-responsive-->
+    </div><!--/panel-->
+    <div style="text-align: center;">
+      <%= link_to 'Edit', edit_history_path(@history) %> |
+      <%= link_to 'Back', histories_path %>
+    </div>
+  </div>
+</div>

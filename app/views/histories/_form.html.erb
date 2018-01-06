@@ -1,0 +1,37 @@
+<%= form_with(model: history, local: true) do |form| %>
+  <% if history.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(history.errors.count, "error") %> prohibited this history from being saved:</h2>
+
+      <ul>
+      <% history.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    名言
+    <%= form.text_field :word, id: :history_word, class: "form-control" %>
+  </div><br>
+
+  <div class="field">
+    元ネタ
+    <%= form.text_field :name, id: :history_name, class: "form-control" %>
+  </div><br>
+
+  <div class="field">
+    説明
+    <%= form.text_area :examination, id: :history_examination, class: "form-control", style: "height: 200px;" %>
+  </div><br>
+
+  <div class="field" style="text-align: center;">
+    日付
+    <%= form.date_select :date, id: :history_date %>
+  </div><br>
+
+  <div class="actions" style="text-align: center;">
+    <%= form.submit %>
+  </div><br>
+<% end %>

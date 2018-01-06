@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<% if session[:user_id] == nil %>
+				<li><%= link_to '応物の(黒)歴史', '/', class: "navbar-brand" %></li>
+			<% else %>
+				<li><%= link_to '応物の(黒)歴史', histories_path, class: "navbar-brand" %></li>
+			<% end %>
+		</div>
+
+		<div class="collapse navbar-collapse" id="navbarEexample7">
+			<ul class="nav navbar-nav">
+				<% if session[:user_id] == nil %>
+					<li><%= link_to 'Login', home_login_form_path %></li>
+				<% else %>
+					<li><%= link_to 'Logout', home_logout_path, method: :post %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</nav>
