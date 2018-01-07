@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 <div class="main">
   <div class="centering">
+    <%= form_tag histories_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+    <% end %>
     <div class="panel panel-primary" style="width: 100%; margin: auto;">
       <div class="panel-heading" style="text-align: center;">黒歴史一覧</div>
       <!-- Table -->

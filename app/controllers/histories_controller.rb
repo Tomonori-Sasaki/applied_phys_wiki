@@ -5,7 +5,7 @@ class HistoriesController < ApplicationController
   # GET /histories
   # GET /histories.json
   def index
-    @histories = History.all.order(:date)
+    @histories = History.search(params[:search]).order(:date)
   end
 
   # GET /histories/1
