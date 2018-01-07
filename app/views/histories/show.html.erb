@@ -5,14 +5,14 @@
     <div class="panel panel-primary" style="width: 100%; margin: auto;">
       <div class="panel-heading" style="text-align: center;"><%= @history.word %></div>
       <!-- Table -->
-  
+
         <table class="table table-striped table-bordered table-hover">
           <tbody>
             <tr>
               <th style="width: 80px;">元ネタ</th><td><%= @history.name %></td>
             </tr>
             <tr>
-              <th>説明</th><td><%= @history.examination %></td>
+              <th>説明</th><td style="text-align: left;"><%= @history.examination.gsub(/\r\n|\r|\n/, "<br />").html_safe %></td>
             </tr>
             <tr>
               <th>日付</th><td><%= @history.date %></td>
